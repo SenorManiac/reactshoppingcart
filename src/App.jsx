@@ -1,25 +1,26 @@
 import { useState } from 'react'
 import { Outlet } from 'react-router-dom'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import DisplayShop from './pages/Shop';
 // import './App.css'
 import NavigationBar from './components/NavigationBar'
 
 function App() {
-  const [cart, setCart] = useState([]);
+  const [cart, setCart] = useState({ total: 0, items: [] });
 
   const addToCart = (item) => {
-    setCart([...cart, item]);
+    setCart((prevCart) => {
+      const updatedItems = [...prevCart.items, item];
+      const updatedTotal = prevCart.total + item.price;
+      return { total: updatedTotal, items: updatedItems };
+    });
   };
 
-  const cartItemCount = cart.length;
+  const cartItemCount = cart.items.length;
 
   return (
     <>
-      <div>
-        <NavigationBar cartItemCount={cartItemCount}/>
-        </div>
-      <Outlet />
+      <NavigationBar cartItemCount={cartItemCount} />
+      <Outlet context={{addToCart}}/>
 
       
     </>

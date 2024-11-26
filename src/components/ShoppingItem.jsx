@@ -4,20 +4,23 @@
 import React from 'react';
 import '../styles/ShoppingItem.css';
 
-const ShoppingItem = ({ id, name, price, image, rating }) => {
+
+const ShoppingItem = ({ id, name, price, image, rating, addToCart }) => {
+    const handleAddToCart = () => {
+      addToCart({ id, name, price });
+    };
     
     return (
         <div id={`itemid${id}`} className='item'>
             <div className='heading'>
             <h2 title={name}>{name}</h2>
             <img src={image} alt={name} />
-            </div>
-           
+            </div>           
             <div className='rating'>
                 <p>${price}</p>    
                 <p> {rating.rate} ⭐ ({rating.count} reviews)</p>
                </div>
-            <button>Add to Cart</button>
+            <button onClick={handleAddToCart}>Add to Cart</button>
         </div>
     );
 }
