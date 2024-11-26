@@ -1,0 +1,20 @@
+/* This is the CSS file for the NavigationBar component. It contains the styles for the NavigationBar component. */
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #f8f9fa;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  justify-content: space-between;
+}
+
+nav ul li {
+  margin-right: 1rem;
+}
