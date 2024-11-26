@@ -6,12 +6,21 @@ import viteLogo from '/vite.svg'
 import NavigationBar from './components/NavigationBar'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [cart, setCart] = useState([]);
+
+  const addToCart = (item) => {
+    setCart([...cart, item]);
+  };
+
+  const cartItemCount = cart.length;
+
+  console.log(cartItemCount);
+
 
   return (
     <>
       <div>
-        <NavigationBar />
+        <NavigationBar cartItemCount={cartItemCount}/>
         </div>
       <Outlet />
 

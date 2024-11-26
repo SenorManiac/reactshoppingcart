@@ -6,7 +6,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/NavigationBar.css';
 
-function NavigationBar() {
+function NavigationBar({ cartItemCount }) {
   return (
     <nav>
       <ul>
@@ -16,13 +16,11 @@ function NavigationBar() {
         <li>
           <Link to="/shop">Shop</Link>
         </li>
-            
-        
       </ul>
       <Link to="/cart">
-            <i className="fas fa-shopping-cart"></i>
-            <span>0</span>
-          </Link>
+        <i className="fas fa-shopping-cart"></i>
+        <span>{cartItemCount}</span>
+      </Link>
     </nav>
   );
 }
