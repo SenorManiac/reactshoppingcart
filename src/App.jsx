@@ -14,9 +14,6 @@ function App() {
 
   const cartItemCount = cart.length;
 
-  console.log(cartItemCount);
-
-
   return (
     <>
       <div>
