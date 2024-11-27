@@ -62,7 +62,7 @@ img {
     padding: 10px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-  }
+}
 
 .item-name {
     display: flex;
@@ -75,7 +75,6 @@ img {
     text-overflow: ellipsis; 
 }
 
-
 .total {
     text-align: right; 
     margin-top: 20px;
@@ -83,13 +82,13 @@ img {
     justify-self: flex-end;
     gap: 20px;
     align-self: flex-end;
-  }
+}
   
-  .total h2 {
+.total h2 {
     color: #1B3A51;
-  }
+}
   
-  .total button {
+.total button {
     background-color: #A0BAC1;
     color: #fff;
     border: none;
@@ -98,8 +97,35 @@ img {
     cursor: pointer;
     transition: background-color 0.3s ease;
     height: 50px;
-  }
+}
   
-  .total button:hover {
+.total button:hover {
     background-color: #6597A9;
-  }
+}
+
+/* Media Queries for Mobile Responsiveness */
+@media (max-width: 768px) {
+    .cartlist ul li {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .cartlist ul li img {
+        margin-bottom: 10px;
+    }
+
+    .item-name {
+        font-size: 1.2rem;
+    }
+
+    .total {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .total button {
+        width: 100%;
+        margin-top: 10px;
+    }
+}
