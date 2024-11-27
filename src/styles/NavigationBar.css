@@ -37,7 +37,7 @@ nav {
     align-items: center; /* Center links vertically */
   }
 
-  span {
+  nav span {
     display: flex;
     text-align: center ;
     font-size: 1.1em;
