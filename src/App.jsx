@@ -36,7 +36,7 @@ function App() {
     <>
       <NavigationBar cartItemCount={cartItemCount} />
       <Outlet context={{addToCart,removeFromCart, cart}}/>
-      <Footer/>
+      <Footer />
 
 
       
