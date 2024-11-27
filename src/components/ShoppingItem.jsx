@@ -7,7 +7,7 @@ import '../styles/ShoppingItem.css';
 
 const ShoppingItem = ({ id, name, price, image, rating, addToCart }) => {
     const handleAddToCart = () => {
-      addToCart({ id, name, price });
+      addToCart({ id, name, price, image });
     };
     
     return (

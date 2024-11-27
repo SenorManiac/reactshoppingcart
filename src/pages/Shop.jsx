@@ -23,7 +23,7 @@ function DisplayShop() {
           <ShoppingItem
             key={item.id}
             id={item.id}
-            name={item.name}
+            name={item.title}
             price={item.price}
             image={item.image}
             rating={item.rating}
@@ -31,6 +31,9 @@ function DisplayShop() {
           />
         ))}
       </div>
+      <footer>
+                <p>&copy; 2024 Shopping Cart. All rights reserved.</p>
+            </footer>
     </>
   );
 }

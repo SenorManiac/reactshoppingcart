@@ -1,8 +1,9 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react';
 import { Outlet } from 'react-router-dom'
 import DisplayShop from './pages/Shop';
 // import './App.css'
 import NavigationBar from './components/NavigationBar'
+import Footer from './components/Footer'
 
 function App() {
   const [cart, setCart] = useState({ total: 0, items: [] });
@@ -15,12 +16,28 @@ function App() {
     });
   };
 
+  const removeFromCart = (index) => {
+    setCart((prevCart) => {
+      const itemToRemove = prevCart.items[index];
+      const updatedItems = prevCart.items.filter((_, i) => i !== index);
+      const updatedTotal = prevCart.total - itemToRemove.price;
+      return { total: updatedTotal, items: updatedItems };
+    });
+  };
+
+  
+  useEffect(() => {
+    console.log(cart);
+  }, [cart]); 
+
   const cartItemCount = cart.items.length;
 
   return (
     <>
       <NavigationBar cartItemCount={cartItemCount} />
-      <Outlet context={{addToCart}}/>
+      <Outlet context={{addToCart,removeFromCart, cart}}/>
+      <Footer/>
+
 
       
     </>
