@@ -5,7 +5,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/NavigationBar.css';
-
+import Cart from '../assets/cart.svg';
 function NavigationBar({ cartItemCount }) {
   return (
     <nav>
@@ -19,7 +19,7 @@ function NavigationBar({ cartItemCount }) {
       </ul>
       <Link to="/cart">
         <i className="fas fa-shopping-cart"></i>
-        <span>{cartItemCount}</span>
+        <span><img src={Cart}/>{cartItemCount}</span>
       </Link>
     </nav>
   );
