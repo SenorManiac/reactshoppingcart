@@ -1,9 +1,8 @@
 import { useState, useEffect } from 'react';
 import { Outlet } from 'react-router-dom'
-import DisplayShop from './pages/Shop';
 // import './App.css'
 import NavigationBar from './components/NavigationBar'
-import Footer from './components/Footer'
+import Footer from './components/footer'
 
 function App() {
   const [cart, setCart] = useState({ total: 0, items: [] });
